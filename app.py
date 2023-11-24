@@ -1135,7 +1135,7 @@ def MainPage():
         st.write("***mixed care***: Under this classification, when the care foundation is mentioned, speakers employ both care virtues and vices.")
         st.write("***no care***: Here, speakers abstain from integrating care foundation into their speech.")
     st.write("#### User Manual")
-    with open("version_2/User_Manual.pdf", "rb") as file:
+    with open("data/User_Manual.pdf", "rb") as file:
         st.download_button(
             label="Download User Manual",
             data=file,
@@ -2535,7 +2535,7 @@ def style_css(file):
     with open(file) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-style_css(r"version_2/multi_style.css")
+style_css(r"style/multi_style.css")
 
 # sidebar
 with st.sidebar:
@@ -2560,41 +2560,41 @@ with st.sidebar:
         if option1 == True and option2 == False and option3 == False and option4 == False and option5 == False:
             options = ["British Empire"]
             corpus_name1 = "British Empire"
-            df = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
             df["topic"] = "British Empire"
-            df_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
+            df_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
             df_pair["topic"] = "British Empire"
 
         elif option1 == False and option2 == True and option3 == False and option4 == False and option5 == False:
             options = ["DDay"]
             corpus_name1 = "DDay"
-            df = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
+            df = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
             df["topic"] = "DDay"
-            df_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
+            df_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
             df_pair["topic"] = "DDay"
 
         elif option1 == False and option2 == False and option3 == True and option4 == False and option5 == False:
             options = ["Hypocrisy"]
             corpus_name1 = "Hypocrisy"
-            df = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
             df["topic"] = "Hypocrisy"
-            df_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
+            df_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
             df_pair["topic"] = "Hypocrisy"
 
         elif option1 == False and option2 == False and option3 == False and option4 == True and option5 == False:
             options = ["Money"]
             corpus_name1 = "Money"
-            df = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df["topic"] = "Money"
-            df_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
+            df_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
             df_pair["topic"] = "Money"
 
         elif option1 == False and option2 == False and option3 == False and option4 == False and option5 == True:
             options = ["Welfare State"]
             corpus_name1 = "Welfare State"
-            df = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df["topic"] = "Welfare State"
-            df_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df_pair["topic"] = "Welfare State"
 
 
@@ -2603,14 +2603,14 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "DDay"
 
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df = pd.concat([df1, df2])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df2_pair["topic"] = "DDay"
             df_pair = pd.concat([df1_pair, df2_pair])
@@ -2620,14 +2620,14 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "Hypocrisy"
 
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df3["topic"] = "Hypocrisy"
             df = pd.concat([df1, df3])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df3_pair["topic"] = "Hypocrisy"
             df_pair = pd.concat([df1_pair, df3_pair])
@@ -2637,14 +2637,14 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "Money"
 
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "Money"
             df = pd.concat([df1, df2])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df2_pair["topic"] = "Money"
             df_pair = pd.concat([df1_pair, df2_pair])
@@ -2653,14 +2653,14 @@ with st.sidebar:
             options = ["British Empire", "Welfare"]
             corpus_name1 = "British Empire"
             corpus_name5 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df5["topic"] = "Welfare"
             df = pd.concat([df1, df5])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df5_pair["topic"] = "Welfare"
             df_pair = pd.concat([df1_pair, df5_pair])
@@ -2670,14 +2670,14 @@ with st.sidebar:
             options = ["DDay", "Hypocrisy"]
             corpus_name1 = "DDay"
             corpus_name2 = "Hypocrisy"
-            df1 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
             df1["topic"] = "DDay"
             df2["topic"] = "Hypocrisy"
             df = pd.concat([df1, df2])
 
-            df1_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
             df1_pair["topic"] = "DDay"
             df2_pair["topic"] = "Hypocrisy"
             df_pair = pd.concat([df1_pair, df2_pair])
@@ -2686,14 +2686,14 @@ with st.sidebar:
             options = ["British Empire", "DDay", "Hypocrisy", "Money", "Welfare"]
             corpus_name1 = "DDay"
             corpus_name2 = "Money"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df4["topic"] = "Money"
             df = pd.concat([df2, df4])
 
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
             df2_pair["topic"] = "DDay"
             df4_pair["topic"] = "Money"
             df_pair = pd.concat([df2_pair, df4_pair])
@@ -2702,14 +2702,14 @@ with st.sidebar:
             options = ["British Empire", "DDay", "Hypocrisy", "Money", "Welfare"]
             corpus_name1 = "DDay"
             corpus_name2 = "Welfare"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df5["topic"] = "Welfare"
             df = pd.concat([df2, df5])
 
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df2_pair["topic"] = "DDay"
             df5_pair["topic"] = "Welfare"
             df_pair = pd.concat([df2_pair, df5_pair])
@@ -2718,14 +2718,14 @@ with st.sidebar:
             options = ["Hypocrisy", "Money"]
             corpus_name1 = "Hypocrisy"
             corpus_name2 = "Money"
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
             df = pd.concat([df3, df4])
 
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
             df3_pair["topic"] = "Hypocrisy"
             df4_pair["topic"] = "Money"
             df_pair = pd.concat([df3_pair, df4_pair])
@@ -2734,14 +2734,14 @@ with st.sidebar:
             options = ["Hypocrisy", "Welfare"]
             corpus_name3 = "Hypocrisy"
             corpus_name5 = "Welfare"
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df3["topic"] = "Hypocrisy"
             df5["topic"] = "Welfare"
             df = pd.concat([df3, df5])
 
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df3_pair["topic"] = "Hypocrisy"
             df5_pair["topic"] = "Welfare"
             df_pair = pd.concat([df3_pair, df5_pair])
@@ -2750,14 +2750,14 @@ with st.sidebar:
             options = ["Money", "Welfare"]
             corpus_name1 = "Money"
             corpus_name2 = "Welfare"
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df4["topic"] = "Money"
             df5["topic"] = "Welfare"
             df = pd.concat([df4, df5])
 
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df4_pair["topic"] = "Money"
             df5_pair["topic"] = "Welfare"
             df_pair = pd.concat([df4_pair, df5_pair])
@@ -2767,18 +2767,18 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "DDay"
             corpus_name3 = "Hypocrisy"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
             df = pd.concat([df1, df2])
             df = pd.concat([df, df3])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df2_pair["topic"] = "DDay"
             df3_pair["topic"] = "Hypocrisy"
@@ -2790,18 +2790,18 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "DDay"
             corpus_name3 = "Money"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df4["topic"] = "Money"
             df = pd.concat([df1, df2])
             df = pd.concat([df, df4])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df2_pair["topic"] = "DDay"
             df4_pair["topic"] = "Money"
@@ -2815,18 +2815,18 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "DDay"
             corpus_name3 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df5["topic"] = "Welfare"
             df = pd.concat([df1, df2])
             df = pd.concat([df, df5])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df2_pair["topic"] = "DDay"
             df5_pair["topic"] = "Welfare"
@@ -2838,18 +2838,18 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Money"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
             df = pd.concat([df1, df3])
             df = pd.concat([df, df4])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df3_pair["topic"] = "Hypocrisy"
             df4_pair["topic"] = "Money"
@@ -2862,18 +2862,18 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df3["topic"] = "Hypocrisy"
             df5["topic"] = "Welfare"
             df = pd.concat([df1, df3])
             df = pd.concat([df, df5])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df3_pair["topic"] = "Hypocrisy"
             df5_pair["topic"] = "Welfare"
@@ -2885,18 +2885,18 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "Money"
             corpus_name3 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "Money"
             df3["topic"] = "Welfare"
             df = pd.concat([df1, df2])
             df = pd.concat([df, df3])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df2_pair["topic"] = "Money"
             df3_pair["topic"] = "Welfare"
@@ -2908,18 +2908,18 @@ with st.sidebar:
             corpus_name1 = "DDay"
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Money"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
             df = pd.concat([df2, df3])
             df = pd.concat([df, df4])
 
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
             df2_pair["topic"] = "DDay"
             df3_pair["topic"] = "Hypocrisy"
             df4_pair["topic"] = "Money"
@@ -2932,18 +2932,18 @@ with st.sidebar:
             corpus_name1 = "DDay"
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Welfare"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
             df5["topic"] = "Welfare"
             df = pd.concat([df2, df3])
             df = pd.concat([df, df5])
 
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df2_pair["topic"] = "DDay"
             df3_pair["topic"] = "Hypocrisy"
             df5_pair["topic"] = "Welfare"
@@ -2955,18 +2955,18 @@ with st.sidebar:
             corpus_name1 = "DDay"
             corpus_name2 = "Money"
             corpus_name3 = "Welfare"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df4["topic"] = "Money"
             df5["topic"] = "Welfare"
             df = pd.concat([df2, df4])
             df = pd.concat([df, df5])
 
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df2_pair["topic"] = "DDay"
             df4_pair["topic"] = "Money"
             df5_pair["topic"] = "Welfare"
@@ -2978,18 +2978,18 @@ with st.sidebar:
             corpus_name1 = "Hypocrisy"
             corpus_name2 = "Money"
             corpus_name3 = "Welfare"
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
             df5["topic"] = "Welfare"
             df = pd.concat([df3, df4])
             df = pd.concat([df, df5])
 
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df3_pair["topic"] = "Hypocrisy"
             df4_pair["topic"] = "Money"
             df5_pair["topic"] = "Welfare"
@@ -3003,10 +3003,10 @@ with st.sidebar:
             corpus_name2 = "DDay"
             corpus_name3 = "Hypocrisy"
             corpus_name4 = "Money"
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df2_pair["topic"] = "DDay"
             df3_pair["topic"] = "Hypocrisy"
@@ -3015,10 +3015,10 @@ with st.sidebar:
             df_pair = pd.concat([df_pair, df3_pair])
             df_pair = pd.concat([df_pair, df4_pair])
 
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
@@ -3033,10 +3033,10 @@ with st.sidebar:
             corpus_name2 = "DDay"
             corpus_name3 = "Hypocrisy"
             corpus_name4 = "Welfare State"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
@@ -3045,10 +3045,10 @@ with st.sidebar:
             df = pd.concat([df, df3])
             df = pd.concat([df, df4])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df2_pair["topic"] = "DDay"
             df3_pair["topic"] = "Hypocrisy"
@@ -3063,10 +3063,10 @@ with st.sidebar:
             corpus_name2 = "DDay"
             corpus_name3 = "Money"
             corpus_name4 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df4["topic"] = "Money"
@@ -3075,10 +3075,10 @@ with st.sidebar:
             df = pd.concat([df, df4])
             df = pd.concat([df, df5])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df2_pair["topic"] = "DDay"
             df4_pair["topic"] = "Money"
@@ -3093,10 +3093,10 @@ with st.sidebar:
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Money"
             corpus_name4 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
@@ -3105,10 +3105,10 @@ with st.sidebar:
             df = pd.concat([df, df4])
             df = pd.concat([df, df5])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df3_pair["topic"] = "Hypocrisy"
             df4_pair["topic"] = "Money"
@@ -3123,10 +3123,10 @@ with st.sidebar:
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Money"
             corpus_name4 = "Welfare"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
@@ -3135,10 +3135,10 @@ with st.sidebar:
             df = pd.concat([df, df4])
             df = pd.concat([df, df5])
 
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df2_pair["topic"] = "DDay"
             df3_pair["topic"] = "Hypocrisy"
             df4_pair["topic"] = "Money"
@@ -3154,11 +3154,11 @@ with st.sidebar:
             corpus_name3 = "Hypocrisy"
             corpus_name4 = "Money"
             corpus_name5 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
@@ -3169,11 +3169,11 @@ with st.sidebar:
             df = pd.concat([df, df4])
             df = pd.concat([df, df5])
 
-            df1_pair = pd.read_csv(r"version_2/BritishEmpire Pair.csv", index_col=0)
-            df2_pair = pd.read_csv(r"version_2/DDay Pair.csv", index_col=0)
-            df3_pair = pd.read_csv(r"version_2/Hypocrisy Pair.csv", index_col=0)
-            df4_pair = pd.read_csv(r"version_2/Money Pair.csv", index_col=0)
-            df5_pair = pd.read_csv(r"version_2/Welfare Pair.csv", index_col=0)
+            df1_pair = pd.read_csv(r"data/BritishEmpire Pair.csv", index_col=0)
+            df2_pair = pd.read_csv(r"data/DDay Pair.csv", index_col=0)
+            df3_pair = pd.read_csv(r"data/Hypocrisy Pair.csv", index_col=0)
+            df4_pair = pd.read_csv(r"data/Money Pair.csv", index_col=0)
+            df5_pair = pd.read_csv(r"data/Welfare Pair.csv", index_col=0)
             df1_pair["topic"] = "British Empire"
             df2_pair["topic"] = "DDay"
             df3_pair["topic"] = "Hypocrisy"
@@ -3229,8 +3229,8 @@ with st.sidebar:
             options = ["British Empire", "DDay"]
             corpus_name1 = "British Empire"
             corpus_name2 = "DDay"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df = pd.concat([df1, df2])
@@ -3239,8 +3239,8 @@ with st.sidebar:
             options = ["British Empire", "Hypocrisy"]
             corpus_name1 = "British Empire"
             corpus_name2 = "Hypocrisy"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
 
             df1["topic"] = "British Empire"
             df3["topic"] = "Hypocrisy"
@@ -3250,8 +3250,8 @@ with st.sidebar:
             options = ["British Empire", "Money"]
             corpus_name1 = "British Empire"
             corpus_name2 = "Money"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "Money"
             df = pd.concat([df1, df2])
@@ -3260,8 +3260,8 @@ with st.sidebar:
             options = ["British Empire", "Welfare"]
             corpus_name1 = "British Empire"
             corpus_name5 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df5["topic"] = "Welfare"
             df = pd.concat([df1, df5])
@@ -3270,8 +3270,8 @@ with st.sidebar:
             options = ["DDay", "Hypocrisy"]
             corpus_name1 = "DDay"
             corpus_name2 = "Hypocrisy"
-            df1 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
             df1["topic"] = "DDay"
             df2["topic"] = "Hypocrisy"
             df = pd.concat([df1, df2])
@@ -3280,8 +3280,8 @@ with st.sidebar:
             options = ["British Empire", "DDay", "Hypocrisy", "Money", "Welfare"]
             corpus_name1 = "DDay"
             corpus_name2 = "Money"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df4["topic"] = "Money"
             df = pd.concat([df2, df4])
@@ -3290,8 +3290,8 @@ with st.sidebar:
             options = ["British Empire", "DDay", "Hypocrisy", "Money", "Welfare"]
             corpus_name1 = "DDay"
             corpus_name2 = "Welfare"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df5["topic"] = "Welfare"
             df = pd.concat([df2, df5])
@@ -3300,8 +3300,8 @@ with st.sidebar:
             options = ["Hypocrisy", "Money"]
             corpus_name1 = "Hypocrisy"
             corpus_name2 = "Money"
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
             df = pd.concat([df3, df4])
@@ -3310,8 +3310,8 @@ with st.sidebar:
             options = ["Hypocrisy", "Welfare"]
             corpus_name3 = "Hypocrisy"
             corpus_name5 = "Welfare"
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df3["topic"] = "Hypocrisy"
             df5["topic"] = "Welfare"
             df = pd.concat([df3, df5])
@@ -3320,8 +3320,8 @@ with st.sidebar:
             options = ["Money", "Welfare"]
             corpus_name1 = "Money"
             corpus_name2 = "Welfare"
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df4["topic"] = "Money"
             df5["topic"] = "Welfare"
             df = pd.concat([df4, df5])
@@ -3331,9 +3331,9 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "DDay"
             corpus_name3 = "Hypocrisy"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
@@ -3345,9 +3345,9 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "DDay"
             corpus_name3 = "Money"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df4["topic"] = "Money"
@@ -3359,9 +3359,9 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "DDay"
             corpus_name3 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df5["topic"] = "Welfare"
@@ -3373,9 +3373,9 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Money"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
@@ -3388,9 +3388,9 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df3["topic"] = "Hypocrisy"
             df5["topic"] = "Welfare"
@@ -3402,9 +3402,9 @@ with st.sidebar:
             corpus_name1 = "British Empire"
             corpus_name2 = "Money"
             corpus_name3 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "Money"
             df3["topic"] = "Welfare"
@@ -3415,9 +3415,9 @@ with st.sidebar:
             corpus_name1 = "DDay"
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Money"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
@@ -3428,9 +3428,9 @@ with st.sidebar:
             corpus_name1 = "DDay"
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Welfare"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
             df5["topic"] = "Welfare"
@@ -3442,9 +3442,9 @@ with st.sidebar:
             corpus_name1 = "DDay"
             corpus_name2 = "Money"
             corpus_name3 = "Welfare"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df4["topic"] = "Money"
             df5["topic"] = "Welfare"
@@ -3456,9 +3456,9 @@ with st.sidebar:
             corpus_name1 = "Hypocrisy"
             corpus_name2 = "Money"
             corpus_name3 = "Welfare"
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
             df5["topic"] = "Welfare"
@@ -3472,10 +3472,10 @@ with st.sidebar:
             corpus_name2 = "DDay"
             corpus_name3 = "Hypocrisy"
             corpus_name4 = "Money"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
@@ -3490,10 +3490,10 @@ with st.sidebar:
             corpus_name2 = "DDay"
             corpus_name3 = "Hypocrisy"
             corpus_name4 = "Welfare State"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
@@ -3508,10 +3508,10 @@ with st.sidebar:
             corpus_name2 = "DDay"
             corpus_name3 = "Money"
             corpus_name4 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df4["topic"] = "Money"
@@ -3526,10 +3526,10 @@ with st.sidebar:
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Money"
             corpus_name4 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
@@ -3544,10 +3544,10 @@ with st.sidebar:
             corpus_name2 = "Hypocrisy"
             corpus_name3 = "Money"
             corpus_name4 = "Welfare"
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
             df4["topic"] = "Money"
@@ -3563,11 +3563,11 @@ with st.sidebar:
             corpus_name3 = "Hypocrisy"
             corpus_name4 = "Money"
             corpus_name5 = "Welfare"
-            df1 = pd.read_csv(r"version_2/BritishEmpire_Logo_Moral.csv", index_col=0)
-            df2 = pd.read_csv(r"version_2/DDay_Logo_Moral.csv", index_col=0)
-            df3 = pd.read_csv(r"version_2/Hypocrisy_Logo_Moral.csv", index_col=0)
-            df4 = pd.read_csv(r"version_2/Money_Logo_Moral.csv", index_col=0)
-            df5 = pd.read_csv(r"version_2/Welfare_Logo_Moral.csv", index_col=0)
+            df1 = pd.read_csv(r"data/BritishEmpire_Logo_Moral.csv", index_col=0)
+            df2 = pd.read_csv(r"data/DDay_Logo_Moral.csv", index_col=0)
+            df3 = pd.read_csv(r"data/Hypocrisy_Logo_Moral.csv", index_col=0)
+            df4 = pd.read_csv(r"data/Money_Logo_Moral.csv", index_col=0)
+            df5 = pd.read_csv(r"data/Welfare_Logo_Moral.csv", index_col=0)
             df1["topic"] = "British Empire"
             df2["topic"] = "DDay"
             df3["topic"] = "Hypocrisy"
