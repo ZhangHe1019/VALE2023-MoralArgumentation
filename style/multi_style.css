@@ -1,0 +1,118 @@
+
+
+a[href^="#"] {
+  color: black;
+  font-weight: bold;
+}
+
+div[class="row-widgetstSelectbox"] {
+  font-weight: 900;
+}
+
+a[label] {
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+div[class="st-b7"] {
+  font-weight: bold;
+}
+
+p {
+  text-align: justify;
+}
+
+div[class="st-ae st-af st-ag st-ah st-ai st-aj st-ak st-al st-am st-ch st-ao st-ap st-aq st-ar st-as st-at st-au st-av st-aw st-ax st-ay st-az st-b9 st-b1 st-b2 st-b3 st-b4 st-b5 st-b6"] {
+  opacity: 1.1;
+  background-color: white;
+}
+
+div[role="listbox"] ul {
+    background-color: white;
+    font-weight: 500;
+}
+
+div[data-testid="stMarkdownContainer"] {
+  font-weight: bold;
+}
+
+div[data-testid="stMetricDelta"] {
+  font-size: 19px;
+}
+
+div[data-baseweb="select"] > div {
+    background-color: white;
+    font-weight: 600;
+}
+
+
+div[class="streamlit-expanderHeader st-ae st-et st-ag st-ah st-ai st-aj st-bp st-d4 st-cc st-eu st-ev st-ew st-ex st-as st-at st-cq st-ci st-ey st-cg st-ez st-b4 st-by st-ch st-f0 st-b5 st-f1 st-ce st-cf st-cd"] {
+  font-weight: 600;
+  color: black;
+}
+
+div.row-widget.stRadio > div {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+div.row-widget.stRadio > div[role="radiogroup"] > label[data-baseweb="radio"] > div:first-child {
+    background-color: black;
+    border-radius: 0.6rem;
+    padding: 0.18rem;
+    margin-bottom: 1rem;
+}
+
+div.row-widget.stRadio > div[role="radiogroup"] > label[data-baseweb="radio"] > div:last-child {
+    font-weight: bold;
+    color: black;
+}
+
+
+.stSlider {
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.row-widget.stRadio {
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.row-widget.stSelectbox {
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.row-widget.stMultiSelect {
+  font-weight: 900;
+  font-size: 22px;
+}
+
+
+.span {
+  font-weight: bold;
+}
+
+span[data-baseweb="tag"] {
+  color: white;
+  background-color: #BE0000;
+}
+
+div[role="slider"] {
+  color: #BE0000;
+  background-color: #BE0000;
+}
+
+
+div[data-testid="stThumbValue"] {
+  color: #BE0000;
+  font-weight: bold;
+}
+
+div[class="css-demzbm e88czh83"] {
+  color: #BE0000;
+  background-color: #BE0000;
+}
+
