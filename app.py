@@ -1135,7 +1135,7 @@ def MainPage():
         st.write("***mixed care***: Under this classification, when the care foundation is mentioned, speakers employ both care virtues and vices.")
         st.write("***no care***: Here, speakers abstain from integrating care foundation into their speech.")
     st.write("#### User Manual")
-    with open("data/User_Manual.pdf", "rb") as file:
+    with open("User_Manual.pdf", "rb") as file:
         st.download_button(
             label="Download User Manual",
             data=file,
