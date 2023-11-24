@@ -3,7 +3,7 @@
 This repository provides the source code of the **Moral Values Analysis in Argumentation Interface: MorArgAn**. This interface has been developed for the **VALE workshop preproceeding (affiliated with ECAI 2023)**. You can access and use the interface through the following link: https://zhanghe1019-moralan-version-2app-75ao2q.streamlit.app/
 
 ### Data Source
-The data folder contains the Moral Maze data, which includes IAT annotation and detected Moral Values in CSV format. The filenames for these files end with "_Logo_Moral.csv."
+The data folder contains the Moral Maze data, which includes argumentation annotation based on Inference Anchoring Theory and detected Moral Values based on the Moral Foundation Dictionary in CSV format. The filenames for these files end with "_Logo_Moral.csv."
 
 ### User Manual
 To make the most of the interface, please refer to our prepared user manual. The manual will guide you through the functionalities and features of the interface, ensuring a seamless experience as you explore and analyse moral values in argumentation.
