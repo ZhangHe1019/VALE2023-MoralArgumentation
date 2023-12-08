@@ -750,7 +750,7 @@ def Moral_Concern_In_Social_Network(df, moral_foundation, options):
             color = "yellow"
         return color
 
-    f = plt.figure(figsize=(20, 20))
+    f = plt.figure(figsize=(10, 10))
     G = nx.DiGraph(directed=True)
     G.add_nodes_from(df_user.dropna().speaker.values.tolist())
     G.add_edges_from(connection)
