@@ -1,4 +1,4 @@
-## MorArgAn-Moral Value Analytics In Argumentation
+## Moral Value Analytics In Argumentation
 ### Interface Source Code
 This repository provides the source code of the **Moral Values Analysis in Argumentation Interface**. This interface has been developed for the **VALE workshop preproceeding (affiliated with ECAI 2023)**. You can access and use the interface through the following link: https://zhanghe1019-moralan-version-2app-75ao2q.streamlit.app/
 
