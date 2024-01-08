@@ -8,7 +8,7 @@ def add_spacelines(number=2):
     for i in range(number):
         st.write("\n")
 
-st.title("MArgSyn: Moral Argument Synthesis")
+st.title("MArgAn: Moral Argument Analytics")
 add_spacelines(2)
 
 st.write("#### Moral Value Detection")
