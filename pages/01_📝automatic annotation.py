@@ -189,7 +189,7 @@ def Run_MV_Detection_ADU(Data,care_virtue, care_vice, fairness_virtue, fairness_
     st.toast('After Tokenization and Lemmatization', icon='🎉')
     with st.spinner('Calculating the Number of Words'):
         Data["Num_words"] = Data.Words.apply(lambda x: len(x))
-    with st.spinner('Detecting Moral Values'):
+    with st.spinner('Detecting Moral Foundations'):
         Data["care.virtue"] = Data.apply(lambda x: Keywords_matching(get_n_gram([x.Text], 0, 1),
                                                                      care_virtue).return_list() if x.Num_words > 0 else "",
                                          axis=1)
@@ -305,7 +305,7 @@ def Run_MV_Detection_Arg(Data,care_virtue, care_vice, fairness_virtue, fairness_
     st.toast('After Tokenization and Lemmatization', icon='🎉')
     with st.spinner('Calculating the Number of Words'):
         Data["Num_words"] = Data.Words.apply(lambda x: len(x))
-    with st.spinner('Detecting Moral Values'):
+    with st.spinner('Detecting Moral Foundations'):
         Data["care.virtue"] = Data.apply(lambda x: Keywords_matching(get_n_gram([x.Text], 0, 1),
                                                                      care_virtue).return_list() if x.Num_words > 0 else "",
                                          axis=1)
@@ -787,7 +787,7 @@ def RetrieveNodesOnline(map1, nodeset_id_str, type_aif='old'):
 
 
 #####################  page content  #####################
-st.title("Moral Value Detection in Dialogical Arguments")
+st.title("Moral Foundations' Detection in Dialogical Arguments")
 
 maps = glob.glob(r"/maps/*.json")
 directory = "tem_maps"
@@ -909,7 +909,7 @@ with col2:
         df_arg = pd.DataFrame()
 
     if len(df_locu)!=0 and len(df_arg)==0:
-        with st.expander("###### Download Moral Value Annotation",expanded=True):
+        with st.expander("###### Download Moral Foundation Annotation",expanded=True):
             download_type = st.radio('Choose file format', ('CSV',))
             file_download = convert_df(df_locu)
             st.download_button(
@@ -919,7 +919,7 @@ with col2:
                 mime='text/csv', )
 
     if len(df_arg)!=0 and len(df_locu)==0:
-        with st.expander("###### Download Moral Value Annotation",expanded=True):
+        with st.expander("###### Download Moral Foundation Annotation",expanded=True):
             download_type = st.radio('Choose file format', ('CSV',))
             file_download = convert_df(df_arg)
             st.download_button(
