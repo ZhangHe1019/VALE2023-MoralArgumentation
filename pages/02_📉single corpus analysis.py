@@ -1403,7 +1403,7 @@ def Moral_Concern_In_Social_Network(df, df_arg,moral_scale):
         plt.scatter([], [], c=color_dict[v], label='{}'.format(v))
     handles, labels = plt.gca().get_legend_handles_labels()
     res = {labels[i]: handles[i] for i in range(len(labels))}
-    plt.legend([res[label] for label in legend_title], legend_title, loc="lower left", title="User Types",
+    plt.legend([res[label] for label in legend_title], legend_title, loc="upper center", bbox_to_anchor=(0.5, -0.1), title="User Types",
                title_fontsize="12", fontsize="12", ncol=4)
     return f
 
