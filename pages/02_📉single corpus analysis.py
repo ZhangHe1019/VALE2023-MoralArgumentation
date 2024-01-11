@@ -1395,6 +1395,7 @@ def Moral_Concern_In_Social_Network(df, df_arg,moral_scale):
 
     f = plt.figure(figsize=(10, 10))
     G = nx.DiGraph(directed=True)
+    st.write(df_user.dropna().speaker.values.tolist())
     G.add_nodes_from(df_user.dropna().speaker.values.tolist())
     G.add_edges_from(connection)
     color_map = [color_palette(node,moral_scale) for node in G]
