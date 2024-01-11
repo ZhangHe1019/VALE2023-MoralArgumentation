@@ -1406,7 +1406,7 @@ def Moral_Concern_In_Social_Network(df, df_arg,moral_scale):
     # plt.legend([res[label] for label in legend_title], legend_title, loc="upper center", bbox_to_anchor=(1, 1), title="User Types",
     #            title_fontsize="12", fontsize="12", ncol=4
     res = {labels[i]: handles[i] for i in range(len(labels))}
-    plt.legend([res[label] for label in legend_title], legend_title, loc="upper center", bbox_to_anchor=(0.5, -0.2), title="User Types",
+    plt.legend([res[label] for label in legend_title], legend_title, loc="upper left", title="User Types",
            title_fontsize="12", fontsize="12", ncol=1)
 
     return f
