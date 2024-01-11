@@ -765,7 +765,7 @@ def Compare_Moral_Foundation_Word_In_Tweet_Layer(df, format1, moral_scale,num_sc
 
         fig1.update_layout(barmode='group',
                            width=width,
-                           height=width,
+                           height=height,
                            title={
                                'text': "{}".format(title_option),
                                'y': 0.9,
