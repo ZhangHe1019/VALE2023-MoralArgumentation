@@ -1030,6 +1030,11 @@ def Compare_User_Distribution_Stack(df, moral_distribution, format,num_scale,cus
     tick_fontsize = customisation[5]
     axis_fontsize = customisation[6]
     title_option = customisation[7]
+
+    pattern_list = ["-","/", "+","x", "."]
+    pattern_dict = {}
+    for index, (key, value) in enumerate(palette_map.items()):
+        pattern_dict[key] = pattern_list[index]
     
     if moral_distribution == "care":
         moral_list = ["no care", "only care+", "mixed care", "only care-"]
@@ -1110,7 +1115,8 @@ def Compare_User_Distribution_Stack(df, moral_distribution, format,num_scale,cus
                                       family="Arial",  # Font family
                                       size=annotation_fontsize,  # Font size
                                       color="black"  # Font color
-                                  )
+                                  ),
+                marker_pattern_shape=pattern[i]
             ))
             fig.update_layout(barmode='stack', width=width, height=height,
                               title={
@@ -1176,7 +1182,8 @@ def Compare_User_Distribution_Stack(df, moral_distribution, format,num_scale,cus
                                       family="Arial",  # Font family
                                       size=annotation_fontsize,  # Font size
                                       color="black"  # Font color
-                                  )
+                                  ),
+                marker_pattern_shape=pattern[i]
             ))
             fig.update_layout(barmode='stack', width=width, height=height,
                              title={
