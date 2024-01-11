@@ -1116,7 +1116,7 @@ def Compare_User_Distribution_Stack(df, moral_distribution, format,num_scale,cus
                                       size=annotation_fontsize,  # Font size
                                       color="black"  # Font color
                                   ),
-                marker_pattern_shape=pattern[i]
+                marker_pattern_shape=pattern_dict[i]
             ))
             fig.update_layout(barmode='stack', width=width, height=height,
                               title={
@@ -1183,7 +1183,7 @@ def Compare_User_Distribution_Stack(df, moral_distribution, format,num_scale,cus
                                       size=annotation_fontsize,  # Font size
                                       color="black"  # Font color
                                   ),
-                marker_pattern_shape=pattern[i]
+                marker_pattern_shape=pattern_dict[i]
             ))
             fig.update_layout(barmode='stack', width=width, height=height,
                              title={
