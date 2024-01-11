@@ -601,7 +601,7 @@ def Compare_Moral_Foundation_Word_In_Tweet_Layer(df, format1, moral_scale,num_sc
     pattern_list = ["-","/", "+","x", "."]
     pattern_dict = {}
     for index, (key, value) in enumerate(palette_map.items()):
-        enumerated_dict[key] = (key, pattern_list[index])
+        pattern_dict[key] = (key, pattern_list[index])
     
     if moral_scale == 'Moral vs No moral':
         df["morals"] = (df["contains_loyalty_vice"]) | \
