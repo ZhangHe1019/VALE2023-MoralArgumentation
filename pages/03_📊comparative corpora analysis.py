@@ -598,6 +598,10 @@ def Compare_Moral_Foundation_Word_In_Tweet_Layer(df, format1, moral_scale,num_sc
     tick_fontsize = customisation[5]
     axis_fontsize = customisation[6]
     title_option = customisation[7]
+    pattern_list = ["-","/", "+","x", "."]
+    pattern_dict = {}
+    for index, (key, value) in enumerate(palette_map.items()):
+        enumerated_dict[key] = (key, pattern_list[index])
     
     if moral_scale == 'Moral vs No moral':
         df["morals"] = (df["contains_loyalty_vice"]) | \
@@ -756,7 +760,8 @@ def Compare_Moral_Foundation_Word_In_Tweet_Layer(df, format1, moral_scale,num_sc
                                       size=annotation_fontsize,  # Font size
                                       color="black"  # Font color
                                   ),
-                                  textposition='outside'))
+                                  textposition='outside',
+                                  marker_pattern_shape=pattern_dict[i]))
 
         fig1.update_layout(barmode='group',
                            width=width,
@@ -809,7 +814,8 @@ def Compare_Moral_Foundation_Word_In_Tweet_Layer(df, format1, moral_scale,num_sc
                                       family="Arial",  # Font family
                                       size=annotation_fontsize,  # Font size
                                       color="black"  # Font color
-                                  )))
+                                  ),
+                                 marker_pattern_shape=pattern_dict[i]))
         # for type, baseline in baselines.items():
         #         fig1.add_shape(
         #             type='line',
