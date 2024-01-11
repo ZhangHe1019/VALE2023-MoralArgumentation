@@ -1033,7 +1033,7 @@ def Compare_User_Distribution_Stack(df, moral_distribution, format,num_scale,cus
 
     pattern_list = ["-","/", "+","x", "."]
     pattern_dict = {}
-    for index, (key, value) in enumerate(palette_map.items()):
+    for index, (key, value) in enumerate(palette.items()):
         pattern_dict[key] = pattern_list[index]
     
     if moral_distribution == "care":
