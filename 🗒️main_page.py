@@ -32,16 +32,16 @@ with st.expander("Definition"):
         "Referece: **Frimer, J. A., Boghrati, R., Haidt, J., Graham, J., & Dehgani, M. (2019). Moral foundations dictionary for linguistic analyses 2.0. Unpublished manuscript.**")
 add_spacelines(1)
 
-st.write("####  Analysis Metrics")
-st.write("######  Occurrence (Argumentative Discourse Units or Arguments)")
+st.write("#### Moral Foundation Analysis Metrics")
+st.write("###### Moral Foundation Occurrence (Argumentative Discourse Units or Arguments)")
 with st.expander("Definition"):
     add_spacelines(1)
     st.write(""" Drawing from the moral foundation dictionary, 
-    we assess the presence of specific s within text sequences. 
-    Additionally, we've introduced the **No Morals** category to **designate sequences that lack s**. 
-    Taking into account the five moral foundations, each associated with two valence categories, we distinguish between **10  categories**, 
-    plus the category **No Morals** designed for sequences devoid of s.""")
-st.write("######  Score（Interlocutors)")
+    we assess the presence of specific morals within text sequences. 
+    Additionally, we've introduced the **No Morals** category to **designate sequences that lack morals**. 
+    Taking into account the five moral foundations, each associated with two valence categories, we distinguish between **10 moral categories**, 
+    plus the category **No Morals** designed for sequences devoid of morals.""")
+st.write("###### Moral Foundation Scores（Interlocutors)")
 with st.expander("Definition"):
     add_spacelines(1)
     st.write("""We compute **the proportion of sequences that encompass specific morals** across the 10 predefined moral categories to obtain interlocutors' moral foundation score.""")
