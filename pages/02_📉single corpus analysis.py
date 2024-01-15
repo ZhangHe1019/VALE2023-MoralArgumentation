@@ -785,7 +785,7 @@ def User_Interaction_Analysis(df, df_pair, aspect, moral_foundation):
 def word_cloud_ADU_module():
     with st.chat_message("assistant"):
         st.write(
-            "Awesome! Welcome to the *****Word Cloud feature*****. Please **choose the analytical angle for ADUs and Moral Values**.")
+            "Awesome! Welcome to the *****Word Cloud feature*****. Please **choose the analytical angle for ADUs and Morals**.")
         col1, col_, col2 = st.columns([3,1,3])
         col1.write("#### ADU Property")
         col2.write("#### Moral Dimension")
@@ -834,7 +834,7 @@ def word_cloud_ADU_module():
 def moral_value_distribution_ADU_module():
     with st.chat_message("assistant"):
         st.write(
-           "Wonderful! Welcome to the *****Moral Value Distribution***** feature. Kindly **select the analytical perspective for ADUs** and the **evaluation scale for Moral Values**.")
+           "Wonderful! Welcome to the *****Moral Foundation Distribution***** feature. Kindly **select the analytical perspective for ADUs** and the **evaluation scale for Moral Foundations**.")
         col1, col_, col2 = st.columns([3,1,3])
         col1.write("#### ADU Property")
         col2.write("#### Moral Scale")
@@ -851,7 +851,7 @@ def moral_value_distribution_ADU_module():
             moral_scale = st.radio("", ['Moral vs No moral',
                                         '2 Moral Valences',
                                         '5 Moral Foundations',
-                                        '10 Moral Values'], key="moral_scale_mv")
+                                        '5 Moral Foundations * 2 Moral Valences'], key="moral_scale_mv")
 
         n_format = st.radio("numerical representations", ['number', 'percentage'], key="moral_scale_nformat")
         if (len(ADUsel) != 0) & (len(polaritysel) != 0) & (len(structuresel) != 0):
@@ -1080,7 +1080,7 @@ def Moral_Foundation_Word_In_Tweet(df, format1, moral_scale,unit_name,title):
         plt.tick_params(labelsize=15)
         ax.set_xlabel("number", fontsize=15)
         ax.set_ylabel("MF types", fontsize=15)
-        ax.set_title("The number of {}s in {} containing different moral values".format(unit_name,title), fontsize=15)
+        ax.set_title("The number of {}s in {} containing different morals".format(unit_name,title), fontsize=15)
         for i, j in enumerate(statistic_df["Number"].values.tolist()):
             plt.text(j, i, j, fontsize=12)
     else:
@@ -1092,7 +1092,7 @@ def Moral_Foundation_Word_In_Tweet(df, format1, moral_scale,unit_name,title):
         plt.tick_params(labelsize=15)
         ax.set_xlabel("percentage", fontsize=15)
         ax.set_ylabel("MF types", fontsize=15)
-        ax.set_title("The percentage of {}s in {} containing different moral values".format(unit_name,title), fontsize=15)
+        ax.set_title("The percentage of {}s in {} containing different morals".format(unit_name,title), fontsize=15)
         for i, j in enumerate(statistic_df["Percentage"].values.tolist()):
             plt.text(j, i, "{}%".format(round(j, 2)), fontsize=12)
     return fig,statistic_df
@@ -1100,7 +1100,7 @@ def Moral_Foundation_Word_In_Tweet(df, format1, moral_scale,unit_name,title):
 def word_cloud_Arg_module():
     with st.chat_message("assistant"):
         st.write(
-            "Awesome! Welcome to the *****Word Cloud feature*****. Please **choose the analytical angle for Arguments and Moral Values**.")
+            "Awesome! Welcome to the *****Word Cloud feature*****. Please **choose the analytical angle for Arguments and Morals**.")
         col1, col_, col2 = st.columns([3,1,3])
         col1.write("#### Argument Property")
         col2.write("#### Moral Dimension")
@@ -1135,7 +1135,7 @@ def word_cloud_Arg_module():
 def moral_value_distribution_Arg_module():
     with st.chat_message("assistant"):
         st.write(
-           "Wonderful! Welcome to the *****Moral Value Distribution***** feature. Kindly **select the analytical perspective for Arguments** and the **evaluation scale for Moral Values**.")
+           "Wonderful! Welcome to the *****Moral Foundation Distribution***** feature. Kindly **select the analytical perspective for Arguments** and the **evaluation scale for Morals**.")
         col1, col_, col2 = st.columns([3,1,3])
         col1.write("#### Argument Property")
         col2.write("#### Moral Scale")
@@ -1149,7 +1149,7 @@ def moral_value_distribution_Arg_module():
             moral_scale = st.radio("", ['Moral vs No moral',
                                         '2 Moral Valences',
                                         '5 Moral Foundations',
-                                        '10 Moral Values'], key="moral_scale_mv_arg")
+                                        '5 Moral Foundations * 2 Moral Valences'], key="moral_scale_mv_arg")
             n_format = st.radio("numerical representations", ['number', 'percentage'], key="moral_scale_nformat_arg")
 
         if (len(polaritysel) != 0) and (len(speakersel) != 0):
@@ -1184,7 +1184,7 @@ def moral_value_distribution_Arg_module():
 def moral_value_dynamics_Arg_module():
     with st.chat_message("assistant"):
         st.write(
-           "Wonderful! Welcome to the *****Moral Value Dynamics***** feature. Kindly **select the analytical perspective for Arguments** and the **evaluation scale for Moral Values**.")
+           "Wonderful! Welcome to the *****Moral Foundation Dynamics***** feature. Kindly **select the analytical perspective for Arguments** and the **evaluation scale for Morals**.")
         col1, col_, col2 = st.columns([3,1,3])
         col1.write("#### Argument Property")
         col2.write("#### Moral Scale")
@@ -1198,7 +1198,7 @@ def moral_value_dynamics_Arg_module():
             moral_scale = st.radio("", ['Moral vs No moral',
                                         '2 Moral Valences',
                                         '5 Moral Foundations',
-                                        '10 Moral Values'], key="moral_scale_md_arg")
+                                        '5 Moral Foundations * 2 Moral Valences'], key="moral_scale_md_arg")
         if (len(polaritysel) != 0) and (len(speakersel) != 0):
             index1 = (data[polaritysel].sum(axis=1) > 0)
             index2 = (data[speakersel].sum(axis=1) > 0)
@@ -1418,7 +1418,7 @@ def moral_concern_score_ADU_module():
     if len(df) != 0:
         with st.chat_message("assistant"):
             st.write(
-                "Awesome! Welcome to the *****Moral Value Scores feature*****. Following your selections, the analysis outcomes will be displayed below.")
+                "Awesome! Welcome to the *****Moral Foundation Scores feature*****. Following your selections, the analysis outcomes will be displayed below.")
             personal_width = st.text_input('Costumised width', 700)
             personal_height = st.text_input('Costumised height', 190)
             fig = User_Moral_Concern_Score_Heatmap(df,int(personal_width),int(personal_height))
@@ -1484,12 +1484,12 @@ unit = st.sidebar.radio(
 if unit != "Entity-based":
     module = st.sidebar.radio(
         "Analytics module",
-        ("WordCloud", "Moral Value Distribution")
+        ("WordCloud", "Moral Foundation Distribution")
     )
 else:
     module = st.sidebar.radio(
         "Analytics module",
-        ("Moral Value Scores","Interlocutors Distribution","Argumentative Network","Argumentative Interaction")
+        ("Moral Foundation Scores","Interlocutors Distribution","Argumentative Network","Argumentative Interaction")
     )
 
 
@@ -1589,7 +1589,7 @@ if unit == "ADU-based":
             if len(data)!=0:
                 word_cloud_ADU_module()
             ##########################
-    elif module == "Moral Value Distribution":
+    elif module == "Moral Foundation Distribution":
         if len(selection["checked"]) > 0:
             ##########################
             selection_files = [adu_filename_map.get(corpora_name, corpora_name) for corpora_name in
@@ -1607,7 +1607,7 @@ elif unit == "Relation-based":
             data = Arg_dataloader(selection_files)
             if len(data) != 0:
                 word_cloud_Arg_module()
-    elif module == "Moral Value Distribution":
+    elif module == "Moral Foundation Distribution":
         if len(selection["checked"]) > 0:
             ##########################
             selection_files = [arg_filename_map.get(corpora_name, corpora_name) for corpora_name in
@@ -1615,7 +1615,7 @@ elif unit == "Relation-based":
             data = Arg_dataloader(selection_files)
             if len(data) != 0:
                 moral_value_distribution_Arg_module()
-    elif module == "Moral Value Dynamics":
+    elif module == "Moral Foundation Dynamics":
         if len(selection["checked"]) > 0:
             ##########################
             selection_files = [arg_filename_map.get(corpora_name, corpora_name) for corpora_name in
@@ -1624,7 +1624,7 @@ elif unit == "Relation-based":
             if len(data) != 0:
                moral_value_dynamics_Arg_module()
 else:
-    if module == "Moral Value Scores":
+    if module == "Moral Foundation Scores":
         if len(selection["checked"]) > 0:
             ##########################
             selection_files = [adu_filename_map.get(corpora_name, corpora_name) for corpora_name in
