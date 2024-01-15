@@ -30,14 +30,7 @@ def convert_df(df):
     return df.to_csv().encode('utf-8')
     
 def select_corpora(i):
-    nodes = [{"label": "US2016reddit (Real-time Reactions about US Presidential TV Debate on Reddit)", "value": "US2016reddit",
-                 "children": [
-                {"label": "US2016r1D (Democrats)", "value": "US2016r1D"},
-                {"label": "US2016r1G (General)", "value": "US2016r1G"},
-                {"label": "US2016r1R (Republicans)", "value": "US2016r1R"},
-                ]
-                 },
-
+    nodes = [
                 {"label": "MoralMaze (Live Discussions on Moral Issues)", "value": "MoralMaze","children": [
                 {"label": "British Empire", "value": "British Empire"},
                 {"label": "DDay", "value": "DDay"},
@@ -45,14 +38,6 @@ def select_corpora(i):
                 {"label": "Money", "value": "Money"},
                 {"label": "Welfare", "value": "Welfare"},
                 ]},
-             
-                {"label": "US2016tv (US Presidential TV Debate)", "value": "US2016tv",
-                 "children": [
-                {"label": "US2016tvD (Democrats)", "value": "US2016tvD"},
-                {"label": "US2016tvG (General)", "value": "US2016tvG"},
-                {"label": "US2016tvR (Republicans)", "value": "US2016tvR"},
-                ]
-                 },
             ]
     return_select = tree_select(nodes,show_expand_all=True,expand_on_click=True,check_model="leaf",key=i)
     # st.write(return_select)
