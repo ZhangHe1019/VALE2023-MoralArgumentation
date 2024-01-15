@@ -16,13 +16,7 @@ def customised_dataloader():
     return df_ADU, df_arg
 
 def select_corpora():
-    nodes = [{"label": "US2016reddit (Real-time Reactions about US Presidential TV Debate on Reddit)", "value": "US2016reddit",
-                 "children": [
-            {"label": "US2016r1D (Democrats)", "value": "US2016r1D"},
-            {"label": "US2016r1G (General)", "value": "US2016r1G"},
-            {"label": "US2016r1R (Republicans)", "value": "US2016r1R"},
-            ]},
-
+    nodes = [
             {"label": "MoralMaze (Live debate on moral issues)", "value": "MoralMaze","children": [
                 {"label": "British Empire", "value": "British Empire"},
                 {"label": "DDay", "value": "DDay"},
@@ -30,13 +24,6 @@ def select_corpora():
                 {"label": "Money", "value": "Money"},
                 {"label": "Welfare", "value": "Welfare"},
             ]},
-            {"label": "US2016tv (US Presidential TV Debate)", "value": "US2016tv",
-                 "children": [
-                {"label": "US2016tvD (Democrats)", "value": "US2016tvD"},
-                {"label": "US2016tvG (General)", "value": "US2016tvG"},
-                {"label": "US2016tvR (Republicans)", "value": "US2016tvR"},
-            ]
-                 },
             ]
     return_select = tree_select(nodes,show_expand_all=True,expand_on_click=True,check_model="leaf")
     # st.write(return_select)
@@ -47,14 +34,7 @@ def select_corpora_customisation(customised_dataset):
     dataset_list = list()
     for dataset in customised_dataset:
         dataset_list.append({"label":dataset,"value":dataset})
-    nodes = [{"label": "US2016reddit (Real-time Reactions about US Presidential TV Debate on Reddit)",
-              "value": "US2016reddit",
-              "children": [
-                  {"label": "US2016r1D (Democrats)", "value": "US2016r1D"},
-                  {"label": "US2016r1G (General)", "value": "US2016r1G"},
-                  {"label": "US2016r1R (Republicans)", "value": "US2016r1R"},
-              ]},
-
+    nodes = [
              {"label": "MoralMaze (Live debate on moral issues)", "value": "MoralMaze", "children": [
                  {"label": "British Empire", "value": "British Empire"},
                  {"label": "DDay", "value": "DDay"},
@@ -62,13 +42,6 @@ def select_corpora_customisation(customised_dataset):
                  {"label": "Money", "value": "Money"},
                  {"label": "Welfare", "value": "Welfare"},
              ]},
-             {"label": "US2016tv (US Presidential TV Debate)", "value": "US2016tv",
-              "children": [
-                  {"label": "US2016tvD (Democrats)", "value": "US2016tvD"},
-                  {"label": "US2016tvG (General)", "value": "US2016tvG"},
-                  {"label": "US2016tvR (Republicans)", "value": "US2016tvR"},
-              ]
-              },
 
             {"label": "Customisation", "value": "Customisation",
              "children": dataset_list},
