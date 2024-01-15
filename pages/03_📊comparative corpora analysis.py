@@ -1838,7 +1838,7 @@ def Comparative_Moral_Foundation_Word_Cloud(df,category_type,valence_type):
 def word_cloud_ADU_module():
     with st.chat_message("assistant"):
         st.write(
-            "Awesome! Welcome to the *****Word Cloud feature*****. Please **choose the analytical angle for ADUs and Moral Values**.")
+            "Awesome! Welcome to the *****Word Cloud feature*****. Please **choose the analytical angle for ADUs and Morals**.")
         col1, col_, col2 = st.columns([3,1,3])
         col1.write("#### ADU Property")
         col2.write("#### Moral Dimension")
@@ -1947,7 +1947,7 @@ def color_scheme(moral_scale, key):
            "loyalty": l_color,
            "authority": a_color,
            "sanctity": s_color}
-    elif moral_scale == "10 Moral Values":
+    elif moral_scale == "5 Moral Foundations * 2 Moral Valences":
         col1,col2 = st.columns(2)
         with col1:
             c_color = st.color_picker('***Choose the color scheme: Care+ 👇***', '#76D7C4',key="{}_8".format(key))
@@ -2042,7 +2042,7 @@ def color_scheme(moral_scale, key):
 def moral_value_distribution_ADU_module():
     with st.chat_message("assistant"):
         st.write(
-           "Wonderful! Welcome to the *****Moral Value Distribution***** feature. Kindly **select the analytical perspective for ADUs** and the **evaluation scale for Moral Values**.")
+           "Wonderful! Welcome to the *****Moral Foundation Distribution***** feature. Kindly **select the analytical perspective for ADUs** and the **evaluation scale for Morals**.")
         col1, col_, col2 = st.columns([3,1,3])
         col1.write("#### ADU Property")
         with col1:
@@ -2057,7 +2057,7 @@ def moral_value_distribution_ADU_module():
             moral_scale = st.radio("Moral scale 👇",['Moral vs No moral',
                                          '2 Moral Valences',
                                          '5 Moral Foundations',
-                                         '10 Moral Values'],key="moral_scale_mv")
+                                         '5 Moral Foundations * 2 Moral Valences'],key="moral_scale_mv")
             n_format = st.radio("Numerical representations 👇",['number','percentage'],key="moral_scale_nformat")
         if (len(ADUsel)!=0) & (len(polaritysel)!=0) & (len(structuresel)!=0):
             if "Nonarg-ADUs" in ADUsel:
@@ -2296,7 +2296,7 @@ def user_moral_score_ADU_module():
 def word_cloud_Arg_module():
     with st.chat_message("assistant"):
         st.write(
-            "Awesome! Welcome to the *****Word Cloud feature*****. Please **choose the analytical angle for Arguments and Moral Values**.")
+            "Awesome! Welcome to the *****Word Cloud feature*****. Please **choose the analytical angle for Arguments and Morals**.")
         col1, col_, col2 = st.columns([3,1,3])
         col1.write("#### Argument Property")
         col2.write("#### Moral Dimension")
@@ -2329,17 +2329,17 @@ def word_cloud_Arg_module():
 def moral_value_distribution_Arg_module():
     with st.chat_message("assistant"):
         st.write(
-           "Wonderful! Welcome to the *****Moral Value Distribution***** feature. Kindly **select the analytical perspective for Arguments** and the **evaluation scale for Moral Values**.")
+           "Wonderful! Welcome to the *****Moral Foundation Distribution***** feature. Kindly **select the analytical perspective for Arguments** and the **evaluation scale for Morals**.")
         col1, col_, col2 = st.columns([3,1,3])
         col1.write("#### Argument Property")
         with col1:
             polaritysel = st.multiselect("Support/Attack 👇", ["Support", "Attack"],placeholder="Choose one or more options")
             speakersel = st.multiselect("Arguments constructed by the same speaker/Different speakers 👇", ["Same speaker", "Different speakers"],placeholder="Choose one or more options")
         with col2:
-            moral_scale = st.radio("Moral value 👇", ['Moral vs No moral',
+            moral_scale = st.radio("Moral Dimensions 👇", ['Moral vs No moral',
                                         '2 Moral Valences',
                                         '5 Moral Foundations',
-                                        '10 Moral Values'], key="moral_scale_mv_arg")
+                                        '5 Moral Foundations * 2 Moral Valences'], key="moral_scale_mv_arg")
             n_format = st.radio("Numerical representations 👇", ['number', 'percentage'], key="moral_scale_nformat_arg")
 
         if (len(polaritysel) != 0) and (len(speakersel) != 0):
@@ -2430,12 +2430,12 @@ def sidebar():
     if unit != "Entity-based":
         module = st.sidebar.radio(
             "Analytics module",
-            ("WordCloud", "Moral Value Distribution")
+            ("WordCloud", "Moral Foundation Distribution")
         )
     else:
         module = st.sidebar.radio(
             "Analytics module",
-            ("Interlocutors Distribution","Moral Value Scores",)
+            ("Interlocutors Distribution","Moral Foundation Scores",)
         )
     return unit, module
 
@@ -2578,7 +2578,7 @@ if unit == "ADU-based":
             #st.write(data)
             word_cloud_ADU_module()
             ##########################
-    elif module == "Moral Value Distribution":
+    elif module == "Moral Foundation Distribution":
         if at_least_number_not_empty(data_selection,1)[0]:
             ###########################
             dataframe_dict = dict()
@@ -2595,7 +2595,7 @@ elif unit == "Relation-based":
                 dataframe_dict[i] = Arg_dataloader(data_selection[i])
             data = add_datasetname(dataframe_dict)
             word_cloud_Arg_module()
-    elif module == "Moral Value Distribution":
+    elif module == "Moral Foundation Distribution":
         if at_least_number_not_empty(data_selection,1)[0]:
             dataframe_dict = dict()
             for i in at_least_number_not_empty(data_selection, 1)[1]:
@@ -2610,7 +2610,7 @@ else:
                 dataframe_dict[i] = ADU_dataloader(data_selection[i])
             data = add_datasetname(dataframe_dict)
             user_distribution_ADU_module()
-    elif module == "Moral Value Scores":
+    elif module == "Moral Foundation Scores":
         if at_least_number_not_empty(data_selection,1)[0]:
             dataframe_dict = dict()
             for i in at_least_number_not_empty(data_selection, 1)[1]:
