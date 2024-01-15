@@ -1418,7 +1418,7 @@ def moral_concern_score_ADU_module():
     if len(df) != 0:
         with st.chat_message("assistant"):
             st.write(
-                "Awesome! Welcome to the *****Moral Foundation Scores feature*****. Following your selections, the analysis outcomes will be displayed below.")
+                "Awesome! Welcome to the *****Interlocutors' Moral Foundation Scores feature*****. Following your selections, the analysis outcomes will be displayed below.")
             personal_width = st.text_input('Costumised width', 700)
             personal_height = st.text_input('Costumised height', 1900)
             fig = User_Moral_Concern_Score_Heatmap(df,int(personal_width),int(personal_height))
@@ -1489,7 +1489,7 @@ if unit != "Entity-based":
 else:
     module = st.sidebar.radio(
         "Analytics module",
-        ("Moral Foundation Scores","Interlocutors Distribution","Argumentative Network","Argumentative Interaction")
+        ("Interlocutors' Moral Foundation Scores","Interlocutors Distribution","Argumentative Network","Argumentative Interaction")
     )
 
 
@@ -1624,7 +1624,7 @@ elif unit == "Relation-based":
             if len(data) != 0:
                moral_value_dynamics_Arg_module()
 else:
-    if module == "Moral Foundation Scores":
+    if module == "Interlocutors' Moral Foundation Scores":
         if len(selection["checked"]) > 0:
             ##########################
             selection_files = [adu_filename_map.get(corpora_name, corpora_name) for corpora_name in
