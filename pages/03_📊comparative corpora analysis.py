@@ -2435,7 +2435,7 @@ def sidebar():
     else:
         module = st.sidebar.radio(
             "Analytics module",
-            ("Interlocutors Distribution","Moral Foundation Scores",)
+            ("Interlocutors Distribution","Interlocutors' Moral Foundation Scores",)
         )
     return unit, module
 
@@ -2610,7 +2610,7 @@ else:
                 dataframe_dict[i] = ADU_dataloader(data_selection[i])
             data = add_datasetname(dataframe_dict)
             user_distribution_ADU_module()
-    elif module == "Moral Foundation Scores":
+    elif module == "Interlocutors' Moral Foundation Scores":
         if at_least_number_not_empty(data_selection,1)[0]:
             dataframe_dict = dict()
             for i in at_least_number_not_empty(data_selection, 1)[1]:
