@@ -899,7 +899,7 @@ def Compare_Average_User_Concern_Score(df):
                 visible=True,
                 range=[0, max_value]
             )),
-        width=500,
+        width=600,
         height=500)
     return fig
 
