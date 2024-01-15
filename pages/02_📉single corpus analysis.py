@@ -1420,7 +1420,7 @@ def moral_concern_score_ADU_module():
             st.write(
                 "Awesome! Welcome to the *****Moral Foundation Scores feature*****. Following your selections, the analysis outcomes will be displayed below.")
             personal_width = st.text_input('Costumised width', 700)
-            personal_height = st.text_input('Costumised height', 190)
+            personal_height = st.text_input('Costumised height', 1900)
             fig = User_Moral_Concern_Score_Heatmap(df,int(personal_width),int(personal_height))
             st.plotly_chart(fig)
     else:
